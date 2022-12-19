@@ -25,7 +25,7 @@ export default function App() {
 
   return (
     <>
-    <Loader displayMessage={"No more Pokies"}></Loader>
+    {/* <Loader displayMessage={"No more Pokies"}></Loader> */}
       <div className='poki-gallary'>
       {
         pokies && pokies.map((poki,i)=>{
