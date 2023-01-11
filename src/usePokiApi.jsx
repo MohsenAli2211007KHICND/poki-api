@@ -11,6 +11,7 @@ export default function usePokiApi(pageNumber) {
         setLoading(true)
         axios.get(`https://pokeapi.co/api/v2/pokemon/?offset=${pageNumber}&limit=20`).then(res=> {
             const result=res.data.results
+            // console.log(result)
             result.map(async(urls)=>{
                 const pokiInfo= await axios.get(urls.url)
                 console.log(pokiInfo.data)
