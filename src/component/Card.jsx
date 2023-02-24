@@ -3,6 +3,7 @@ import './Card.css'
 
 export default function Card({pokiInfo}) {
   const [num,setNum]=useState('001')
+  const [showData, setShowData] =useState(false);
 
   
 
@@ -12,8 +13,9 @@ export default function Card({pokiInfo}) {
     <>
       <div className='poki-card'>
         <h4>{`${pokiInfo.name}   #${pokiInfo.id}`}</h4>
-        <img src={pokiInfo.sprites.other.home.front_default}></img>
+        <a role={'button'} onClick={()=> setShowData(!showData)}><img src={pokiInfo.sprites.other.home.front_default}></img></a>
         <div>
+          {showData ? 
           <ui>
           <li>
               <span>Abilities</span>
@@ -28,6 +30,8 @@ export default function Card({pokiInfo}) {
               <span>{pokiInfo.height}</span>
             </li>
           </ui>
+          :null}
+          
         </div>
       </div>   
     </> 
